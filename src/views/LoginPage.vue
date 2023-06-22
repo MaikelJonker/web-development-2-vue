@@ -27,7 +27,6 @@ export default defineComponent({
       });
       if(response.ok){
         const data = await response.json();
-        console.log(data);
         state.user = data.user;
         state.token = data.authorisation.token;
         router.push({name: 'home-page'})
