@@ -1,6 +1,6 @@
 <template>
   <NavBar />
-  <main class="center-content">
+  <main class="p-5">
     <RouterView />
   </main>
 </template>

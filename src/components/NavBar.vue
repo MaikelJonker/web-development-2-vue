@@ -1,12 +1,8 @@
 <template>
-  <nav>
-    <h5 href="#">JobFinder</h5>
-    <div>
-        <RouterLink :to="{name: 'home-page'}">Home</RouterLink>
-        <!-- <RouterLink :to="{name: 'applicants-page'}">Applicants</RouterLink>
-        <RouterLink :to="{name: 'applications-page'}">Applications</RouterLink> -->
-        <RouterLink :to="{name: 'login-page'}">Logout</RouterLink>
-    </div>
+  <nav id="navBar">
+    <h4>JobFinder</h4>   
+    <RouterLink :to="{name: 'home-page'}">Home</RouterLink>
+    <RouterLink :to="{name: 'login-page'}">Logout</RouterLink>
   </nav>
 </template>
 
@@ -19,3 +15,17 @@ export default defineComponent({
   setup() {},
 })
 </script>
+
+<style scoped>
+  #navBar{
+    align-items: left;
+    display: flex;
+    flex-direction: row;
+    background-color: #2565cc;
+  }
+  #navBar > *{
+    margin: 1rem;
+    color: white;
+  }
+  
+</style>

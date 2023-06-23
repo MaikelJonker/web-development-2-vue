@@ -9,7 +9,7 @@
       Password
       <input v-model="form.password" type="password" name="password" required="true" class="input" />
     </label>
-    <button
+    <button class="btn btn-primary"
       type="submit">
       Login
     </button>
@@ -39,4 +39,9 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
 }
+/* button{
+  background-color: #2565cc;
+  color: white;
+  border: 0;
+} */
 </style>

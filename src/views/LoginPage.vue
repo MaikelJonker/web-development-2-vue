@@ -1,6 +1,9 @@
 <template>
   <main class="center-content">
-    <LoginForm @submit="login($event)"/>
+    <div class="V-stack">
+      <h1 id="welcome">Welcome!</h1>
+      <LoginForm @submit="login($event)"/>
+    </div>
   </main>
 </template>
 
@@ -40,5 +43,12 @@ export default defineComponent({
 <style scoped>
 main {
   height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#welcome{
+  text-align: center;
+  margin-bottom: 5rem;
 }
 </style>

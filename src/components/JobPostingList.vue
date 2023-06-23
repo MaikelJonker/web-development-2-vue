@@ -1,7 +1,7 @@
 <template>
-  <div v-for="jobPosting in jobPostings">
-    <JobPostingItem :job-posting="jobPosting"/>
-  </div>
+  <template v-for="jobPosting in jobPostings" :key="jobPosting.id">
+    <JobPostingItem @applied="$emit('applied')" :job-posting="jobPosting"/>
+  </template>
 </template>
 
 <script>
@@ -16,6 +16,7 @@ export default defineComponent({
       required: true,
     }
   },
+  emits: ["applied"],
   components: { JobPostingItem },
   setup() {},
 })
