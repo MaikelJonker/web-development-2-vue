@@ -1,5 +1,8 @@
 <template>
-  <JobPostingList v-if="isStateFetched" @applied="fetchApplications" :job-postings="jobPostings"/>
+  <div class="container mt-3">
+    <h2 class="mb-4">Jobs</h2> 
+    <JobPostingList v-if="isStateFetched" @applied="fetchApplications" :job-postings="jobPostings"/> 
+  </div>
 </template>
 
 <script>
@@ -25,22 +28,21 @@ export default defineComponent({
       jobPostings.value = await response.json();
     })
     onBeforeMount(async () => {
-    fetchApplications();
+      fetchApplications();
     })
 
-  async function fetchApplications(){
-           
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/${state.user.id}/applications`, {
-      headers: { 
-        'Content-Type': 'application/json', 
-        Accept: 'application/json',
-        Authorization: `Bearer ${state.token}`,
-      },
-      method: 'GET',
-    })
-    state.applications = await response.json();   
- }
-
+    async function fetchApplications(){
+            
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/${state.user.id}/applications`, {
+        headers: { 
+          'Content-Type': 'application/json', 
+          Accept: 'application/json',
+          Authorization: `Bearer ${state.token}`,
+        },
+        method: 'GET',
+      })
+      state.applications = await response.json();   
+    }
     const isStateFetched = computed(()=> !!state.applications);
 
     return {jobPostings, isStateFetched, fetchApplications};

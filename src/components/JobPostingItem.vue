@@ -1,9 +1,9 @@
 <template>
-  <div class="card container p-0">
-    <div class="card-body row p-4">
+  <div class="card container p-0 mb-3">
+    <div class="card-body row p-4 ">
       <div class="col">
         <h4 class="card-title">{{ jobPosting.title }}</h4>
-        <p class="card-text">{{ jobPosting.content }}</p>
+        <p style="white-space: pre-wrap;" class="card-text">{{ jobPosting.content }}</p>
       </div>
       <div class="col">
         <h6 v-if="hasApplied">Applied!</h6>
@@ -19,7 +19,7 @@
 
 <script>
 
-import { computed, defineComponent, ref, withCtx } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import { state } from '../state/state';
 
 export default defineComponent({

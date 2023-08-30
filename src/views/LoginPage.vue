@@ -32,7 +32,13 @@ export default defineComponent({
         const data = await response.json();
         state.user = data.user;
         state.token = data.authorisation.token;
-        router.push({name: 'home-page'})
+        if(state.user.role === "company"){
+          router.push({name: 'company-home-page'})
+        }
+        else{
+          router.push({name: 'home-page'})
+        }
+        
       }
     };
     return {login};

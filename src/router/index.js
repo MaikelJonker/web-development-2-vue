@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { HomePage, LoginPage } from '../views';
+import { HomePage, LoginPage, CompanyHomePage, CompanyCreatePostingPage } from '../views';
 import { BaseLayout } from '../layouts';
 import { state } from '../state/state';
 
@@ -21,6 +21,16 @@ const router = createRouter({
           path: '/home',
           name: 'home-page',
           component: HomePage,
+        },
+        {
+          path: '/companyHome',
+          name: 'company-home-page',
+          component: CompanyHomePage,
+        },
+        {
+          path: '/companyCreatePosting',
+          name: 'company-create-posting-page',
+          component: CompanyCreatePostingPage,
         }
       ],
     }, 

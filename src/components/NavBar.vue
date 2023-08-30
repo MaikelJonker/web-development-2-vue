@@ -1,7 +1,6 @@
 <template>
   <nav id="navBar">
-    <h4>JobFinder</h4>   
-    <RouterLink :to="{name: 'home-page'}">Home</RouterLink>
+    <h4>JobFinder</h4>
     <RouterLink :to="{name: 'login-page'}">Logout</RouterLink>
   </nav>
 </template>

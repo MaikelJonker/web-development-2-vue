@@ -1,5 +1,5 @@
 <template>
-  <template v-for="jobPosting in jobPostings" :key="jobPosting.id">
+  <template v-for="jobPosting in jobPostings" :key="jobPosting.id">  
     <JobPostingItem @applied="$emit('applied')" :job-posting="jobPosting"/>
   </template>
 </template>
